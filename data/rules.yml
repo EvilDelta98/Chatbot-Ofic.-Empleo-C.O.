@@ -1,0 +1,45 @@
+version: "3.1"
+
+rules:
+
+- rule: bienvenida
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_introduccion
+#  - action: utter_saludo
+  - action: form_get_user_message
+  - active_loop: form_get_user_message
+
+- rule: submit form
+  condition:
+  - active_loop: form_get_user_message
+  steps:
+  - action: form_get_user_message
+  - active_loop: null
+  - action: utter_saludo
+
+- rule: Despedirse cuando se despide
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+#- rule: Anunciar bot cuando desafio
+#  steps:
+#  - intent: bot_desafio
+#  - action: utter_soybot
+
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- rule: Preguntar para reformular
+  steps:
+  - intent: nlu_fallback
+  - action: utter_porfavor_reformule
+
+#- rule: Empezar con un saludo
+#  steps:
+#  - intent: saludo
+#  - action: utter_despedida

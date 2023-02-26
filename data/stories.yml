@@ -1,0 +1,238 @@
+version: "3.1"
+
+stories:
+
+- story: introduccion y saludo
+  steps:
+  - intent: saludo
+    entities:
+    - nombre
+  - slot_was_set:
+    - nombre
+  - action: utter_saludo
+
+- story: saludo_tutorial_afirmativo
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: afirmativo
+  - action: utter_tutorial
+  - action: utter_oferta_actual
+
+- story: saludo_tutorial_negativo
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: negativo
+  - action: utter_oferta_actual
+
+- story: oferta_inscripcion_afirmativo
+  steps:
+  - action: utter_oferta_actual
+  - intent: requerimientos
+  - action: utter_oferta_requisitos
+  - intent: afirmativo
+  - action: utter_anotarse
+  - intent: email
+  - action: utter_despedida
+
+- story: oferta_inscripcion_negativo
+  steps:
+  - action: utter_oferta_actual
+  - intent: requerimientos
+  - action: utter_oferta_requisitos
+  - intent: negativo
+  - action: utter_oferta_actual
+
+- story: proemplear_inscripcion_afirmativo
+  steps:
+  - action: utter_oferta_actual
+  - intent: proemplear
+  - action: utter_proemplear
+  - intent: requerimientos
+  - action: utter_proemplear_requisitos
+  - intent: afirmativo
+  - action: utter_anotarse
+  - intent: email
+  - action: utter_despedida
+
+- story: proemplear_inscripcion_negativo
+  steps:
+  - action: utter_oferta_actual
+  - intent: proemplear
+  - action: utter_proemplear
+  - intent: requerimientos
+  - action: utter_proemplear_requisitos
+  - intent: negativo
+  - action: utter_oferta_actual
+
+- story: progresar_inscripcion_afirmativo
+  steps:
+  - action: utter_oferta_actual
+  - intent: progresar
+  - action: utter_progresar
+  - intent: requerimientos
+  - action: utter_progresar_requisitos
+  - intent: afirmativo
+  - action: utter_anotarse
+  - intent: email
+  - action: utter_despedida
+
+- story: progresar_inscripcion_negativo
+  steps:
+  - action: utter_oferta_actual
+  - intent: progresar
+  - action: utter_progresar
+  - intent: requerimientos
+  - action: utter_progresar_requisitos
+  - intent: negativo
+  - action: utter_oferta_actual
+
+- story: disponibilidad_cursos
+  steps:
+  - intent: cursos_disponibles
+  - action: utter_oferta_actual
+
+- story: contacto
+  steps:
+  - intent: contacto
+  - action: utter_contacto
+  - action: utter_despedida
+
+- story: carga_CV
+  steps:
+  - intent: carga_cv
+  - action: utter_carga_CV
+  - action: utter_despedida
+  
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_introduccion
+  - action: form_get_user_message
+  - active_loop: form_get_user_message
+  - slot_was_set:
+    - requested_slot: nombre
+  - intent: saludo
+    entities:
+    - nombre: Franco
+  - slot_was_set:
+    - nombre: Franco
+  - action: utter_saludo
+  - intent: carga_cv
+  - action: utter_carga_CV
+  - intent: despedida
+  - action: utter_despedida
+  - action: action_restart
+
+- story: interactive_story_2
+  steps:
+  - action: utter_introduccion
+  - intent: saludo
+    entities:
+    - nombre: Camila
+  - action: utter_saludo
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_introduccion
+  - action: form_get_user_message
+  - active_loop: form_get_user_message
+  - slot_was_set:
+    - requested_slot: nombre
+  - intent: saludo
+    entities:
+    - nombre: Camila
+  - slot_was_set:
+    - nombre: Camila
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_saludo
+  - intent: proemplear
+  - action: utter_proemplear
+  - intent: afirmativo
+  - action: utter_anotarse
+  - intent: email
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_introduccion
+  - action: form_get_user_message
+  - active_loop: form_get_user_message
+  - slot_was_set:
+    - requested_slot: nombre
+  - slot_was_set:
+    - nombre: Alejandro
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_saludo
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_introduccion
+  - action: form_get_user_message
+  - active_loop: form_get_user_message
+  - slot_was_set:
+    - requested_slot: nombre
+  - intent: saludo
+    entities:
+    - nombre: Amadeus
+  - action: action_deactivate_loop
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_saludo
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_introduccion
+  - action: form_get_user_message
+  - active_loop: form_get_user_message
+  - slot_was_set:
+    - requested_slot: nombre
+  - slot_was_set:
+    - nombre: Francisco
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_saludo
+  - intent: afirmativo
+  - action: utter_tutorial
+  - action: utter_oferta_actual
+  - intent: requerimientos
+  - action: utter_oferta_requisitos
+  - intent: afirmativo
+  - action: utter_anotarse
+  - intent: email
+  - action: utter_despedida
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_introduccion
+  - action: form_get_user_message
+  - active_loop: form_get_user_message
+  - slot_was_set:
+    - requested_slot: nombre
+  - slot_was_set:
+    - nombre: Francisco
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_saludo
+  - intent: afirmativo
+  - action: utter_tutorial
+  - action: utter_oferta_actual
+  - intent: requerimientos
+  - action: utter_oferta_requisitos
+  - intent: afirmativo
+  - action: utter_anotarse
+  - intent: email
+  - action: utter_despedida

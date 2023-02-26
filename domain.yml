@@ -1,0 +1,132 @@
+version: '3.1'
+intents:
+- afirmativo
+- carga_cv
+- contacto
+- cursos_disponibles
+- despedida
+- email
+- greet
+- negativo
+- out_of_scope
+- proemplear
+- progresar
+- requerimientos
+- saludo
+entities:
+- nombre
+slots:
+  nombre:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: nombre
+responses:
+  utter_introduccion:
+  - text: |-
+      ¡Hola! Mi nombre es Botty, voy a ayudarte el día de hoy a buscar lo que necesites. 
+       ¿Cuál es tu nombre?
+  - text: |-
+      ¡Hey! Soy Botty, un chatbot para construido para asistirte. 
+       ¿Cómo te llamas?
+  - text: |-
+      ¡Bienvenido! Me llamo Botty, fuí construido para serte de ayuda en lo que me quieras preguntar. 
+       ¿Cuál es tu nombre?
+  utter_saludo:
+  - text: |-
+      ¡Hola! {nombre} ¿Cómo puedo ayudarte?
+       ¿Querés que te explique cómo charlar conmigo?
+  - text: |-
+      ¡Hey! {nombre} ¿Cómo puedo serte de ayuda hoy?
+       ¿Necesitas ayuda para navegarme?
+  utter_tutorial:
+  - text: |-
+      Podemos charlar como si estuvieses en la misma Oficina de Empleo, o como si escribieras a cualquier persona. 
+       Voy a hacer mi mayor esfuerzo para comprender lo que necesites y te voy a guiar hasta esa información.
+  utter_oferta_actual:
+  - text: |-
+      Las inscripciones para el plan Proemplear y Progresar continúan en vigencia. Además contamos con cursos y talleres a disponibilidad.
+       Actualmente tenemos [NCursos] disponibles, y son los siguientes:
+       [ListadoCursosActuales]
+  utter_oferta_requisitos:
+  - text: |-
+      Para los cursos necesitamos los siguientes requisitos:
+       Ser mayor de 18 años, o contar con autorización de tutor/a.
+       Completar el formulario de inscripción [formulario_inscripcion].
+       Haber leído y aceptado el protocolo de Covid [protocolo_COVID].
+       ¿Desea inscribirse a algún curso?
+  utter_proemplear:
+  - text: |-
+      Proemplear es un programa del Ministerio de Trabajo, Empleo y Seguridad Social de la Nación. Tiene como objetivo aumentar las oportunidades de inserción laboral de trabajadores/as desocupados/as. Ofrece a las empresas incentivos económicos para la contratación y formación de trabajadores.
+       ¿Desea anotarse al programa Proemplear?
+  utter_proemplear_requisitos:
+  - text: |-
+      Sus requisitos son los siguientes:
+       Ser un/a jóven de entre 18 y 24 años.
+       Participar de PROG.R.ES.AR, el Programa Jóvenes con Más y Mejor Trabajo, trabaja con Seguro de Capacitación y Empleo o ser desocupado del Seguro por Desempleo.
+       ¿Desea anotarse al programa Proemplear?
+  utter_progresar:
+  - text: |-
+      Es un programa integral de Becas Educativas que acompaña al alumno en todos los niveles de formación durante su trayectoria académica, a través de un incentivo económico y un importante estímulo personal, que le permitirá poder avanzar en sus estudios hasta completarlos.
+       El objetivo del programa es fortalecer el ingreso, la permanencia y el egreso de los estudiantes, unificando todas las becas educativas del gobierno nacional.
+       ¿Desea anotarse al programa Progresar?
+  utter_progresar_requisitos:
+  - text: |-
+      Sus requisitos son los siguientes:
+       Ser argentino/a nativo/a; naturalizada/o o extranjera/o, con residencia legal de cinco (5) años en el país y contar con DNI.
+       Ser alumna/o regular de una institución educativa.
+       Tener entre diecisiete (17) y veinticuatro (24) años de edad cumplidos.
+       Estudiantes avanzadas/os en la carrera, hasta treinta (30) años cumplidos.
+       Estudiantes de enfermería sin límite de edad.
+       Se extiende hasta 35 años de edad a las personas con hijas/os a cargo menores de 18 años pertenecientes a hogares monoparentales.
+       Quedan exceptuadas/os del límite de edad las personas trans, pertenecientes a pueblos indígenas, con discapacidad o refugiadas.
+       Los ingresos de la/el joven y los de su grupo familiar no deberán ser superiores a tres (3) Salarios Mínimos, Vitales y Móviles (SMVM), a excepción de que los y las jóvenes solicitantes sean titulares de una pensión no contributiva por invalidez otorgada en el marco del artículo 9° de la Ley N° 13.478.
+       ¿Desea anotarse al programa Progresar?
+  utter_contacto:
+  - text: |-
+      Podes contactarte con la Oficina de Empleo al 485-0996 de lunes a viernes, de 08:00 a 14:00hs.
+       En la dirección B° 3 de Febrero-Antártida Argentina y Gdor. Gregores.
+  utter_anotarse:
+  - text: |
+      ¡Genial! Para inscribirte necesito que me escribas tu correo electrónico para enviarte el formulario de inscripción.
+  - text: |
+      ¡Perfecto! Sólamente necesito tu correo electrónico para enviarte el formulario de inscripción.
+  utter_carga_CV:
+  - text: |
+      Para cargar tu Curriculum Vitae tienes que enviarlo a esta dirección de correo electrónico (intermediacionlaboralmco@gmail.com) junto con una foto con fondo blanco de 4cmx4cm.
+  utter_despedida:
+  - text: |
+      Gracias por charlar conmigo {nombre}, espero haber ayudado con tus consultas.
+  - text: |
+      Hasta la próxima, gracias por hablar conmigo {nombre}.
+  utter_out_of_scope:
+  - text: |
+      Lo siento, todavía no estoy entrenado para responder ese mensaje.
+  utter_porfavor_reformule:
+  - text: |
+      Lo siento, no entendí ese mensaje. ¿Me lo podrías reformular?
+forms:
+  form_get_user_message:
+    required_slots:
+    - nombre
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- email_form
+- utter_anotarse
+- utter_carga_CV
+- utter_contacto
+- utter_despedida
+- utter_introduccion
+- utter_oferta_actual
+- utter_oferta_requisitos
+- utter_out_of_scope
+- utter_porfavor_reformule
+- utter_proemplear
+- utter_proemplear_requisitos
+- utter_progresar
+- utter_progresar_requisitos
+- utter_saludo
+- utter_tutorial

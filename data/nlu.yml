@@ -1,0 +1,455 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - saludos
+    - buenas
+    - buenas tardes
+    - buenos días
+    - buens
+    - hols
+    - holas
+    - hi
+    - que onda?
+    - buendia
+    - buenastardes
+    - hola, buenas
+    - hola?
+    - Hola buenas
+    - Hola bns tards
+    - ¡Sulu!
+    - Ke tal?
+    - Hola wapo
+    - Holaa
+    - Q tl?
+    - Ola
+    - hola, k ase?
+    - Q hubo, como stas
+- intent: proemplear
+  examples: |
+    - ¿Qué es proemplear?
+    - ¿Podés contarme qué es proemplear?
+    - ¿Podrías explicarme qué es Proemplear?
+    - No estoy seguro de lo que significa, ¿me podrías decir qué es Proemplear?
+    - ¿Podrías darme información sobre Proemplear?
+    - Me gustaría saber más acerca de Proemplear, ¿puedes contarme?
+    - He escuchado hablar de Proemplear, pero no estoy seguro de qué se trata. ¿Me lo podrías explicar?
+    - ¿En qué consiste Proemplear?
+    - ¿Cuál es el objetivo de Proemplear?
+    - ¿Cómo funciona Proemplear?
+    - Proemplear?
+    - q es pro emplear?
+    - q es pro enplear?
+    - ke es pro emplear?
+    - q es proenplear?
+    - ke es pro enplear?
+    - q es pro empleear?
+    - k es pro enplear?
+    - q es proemplayar?
+    - q es pro enplayar?
+    - q es proempleado?
+    - q es proempleo?
+    - q es pro empleo?
+    - ke es proemplear?
+    - q es prro emplear?
+    - que es proemplear?
+- intent: progresar
+  examples: |
+    - ¿Qué es progresar?
+    - Me podes dar más información sobre Progresar?
+    - Progresar?
+    - Cómo es Progresar?
+    - ¿Podrías explicarme qué es Progresar?
+    - Me interesa saber más sobre el programa Progresar, ¿podrías decirme en qué consiste?
+    - Me gustaría saber un poco más sobre Progresar
+    - Quiero saber más sobre Progresar, ¿podrías contarme de qué se trata?
+    - Estoy interesado en aplicar al programa Progresar, pero no sé muy bien de qué se trata. ¿Podrías explicarme en qué consiste?
+    - Estoy interesada en aplicar al programa Progresar, pero no sé muy bien de qué se trata. ¿Podrías explicarme en qué consiste?
+    - ¿ke es progreso?
+    - k es progresar?
+    - Q es progrsar?
+    - me podes decier q es progrecer?
+    - Que es progrezar?
+    - No entiendo qué es proguesar, ¿me lo explicás?
+    - Qué es eso de progrosar?
+    - podrias explicarme que es progresar?
+    - me explicarias q es progresar?
+    - ¿qué significa progrezar?
+- intent: requerimientos
+  examples: |
+    - ¿Cuáles son los requerimientos?
+    - ¿Qué necesito para esto?
+    - ¿Se necesita algo?
+    - ¿Qué requisitos hay?
+    - Tengo que cumplir algo?
+    - ¿Qué requisitos necesito para anotarme?
+    - Q ncesito?
+    - Cuales son los rquistios para anotarme a esos cursos?
+    - Cuales son los requisitos para anotarme a esos cursos?
+    - Cuáles son los requisitos necesarios?
+    - Cuáles son los requisitos necesarios para postularse?
+    - ¿Podría decirme los requisitos
+    - ¿Cuáles son los requisitos para ser aceptado?
+    - ¿Cuáles son los requisitos para ser aceptado en el programa?
+    - Cuales son los reqisitos?
+    - Como son los requizitos para aplicar?
+    - Que requezitos piden
+    - Cuantos reqisitos se necesitan
+    - Donde puedo encontrar los requicitos
+- intent: contacto
+  examples: |
+    - ¿Podría facilitarme el número de teléfono de la oficina de empleo?
+    - ¿Me podría indicar cómo puedo obtener el contacto de la oficina de empleo?
+    - Necesito contactar con la oficina de empleo, ¿dónde puedo encontrar su número de teléfono?
+    - ¿Cuál es la dirección de correo electrónico de la oficina de empleo? Me gustaría ponerme en contacto con ellos.
+    - ¿Podría darme información sobre cómo puedo comunicarme con la oficina de empleo?
+    - Por favor, ¿podría decirme cómo puedo obtener el número de teléfono de la oficina de empleo local?
+    - Me gustaría solicitar información de la oficina de empleo, ¿cómo puedo obtener su contacto?
+    - ¿Podría decirme la dirección exacta de la oficina de empleo más cercana y su número de teléfono?
+    - ¿Dónde puedo encontrar el contacto de la oficina de empleo local? Me gustaría hacerles algunas preguntas.
+    - ¿Con quién tengo que hablar?
+    - ¿Tengo que hablar con alguien?
+    - ¿Puedo hablar en persona?
+    - ¿Cuándo está abierto?
+    - ¿Cuándo abre la oficina?
+    - ¿Dónde está la oficina?
+    - Dónde?
+    - Con quién me puedo contactar?
+    - ¿Cuál es el número de teléfono?
+    - Tienen teléfono?
+    - Contacto?
+    - Necesito avlar cn alguien.
+    - Cual es el contakto de la oficina de empleo?
+    - Me pasas el contacte de la ofisina de empleo?
+    - Necesito saber el kontacto de la ofisina de empleoo.
+    - Podes darm el contacto d la oficina d empleo?
+- intent: email
+  examples: |
+    - Mi correo es ejemplo@ejemplo.com
+    - Mi correo electrónico es febrandan@yahoo.com.ar
+    - Mi email es algo@ejemplo.com
+    - ejemplo@ejemplo.com
+    - mi correo es febrandan@yahoo.com.ar
+    - mi correo es fbrandan@uaco.unpa.edu.ar
+    - Me korreo es juanperez@gmail.com
+    - Este es mi correo: lu@gmail.com.ar
+    - Mi correo elktrónico es jose.rodriguez@hotmail.com
+    - Te paso mi korreo elektróniko: Jose.Pepe@yahoo.com
+- intent: cursos_disponibles
+  examples: |
+    - ¿Qué cursos están disponibles?
+    - cursos
+    - ¿Cuáles son los cursos disponibles?
+    - ¿Qué cursos hay para tomar?
+    - ¿Puedes decirme qué cursos están disponibles?
+    - Me gustaría saber qué cursos están disponibles.
+    - A qué me puedo anotar?
+    - información sobre cursos
+    - Qué talleres hay?
+    - Hay algún taller disponible?
+    - ke cursos ay?
+    - me puedne dcir los cursos diponibles?
+    - cusrsos diaponiblkes?
+    - cusors estan?
+    - dnd estan los curzos?
+    - q curso ay?
+    - crso?
+- intent: carga_cv
+  examples: |
+    - ¿Cómo puedo cargar mi CV?
+    - ¿Podrías indicarme dónde puedo subir mi CV?
+    - ¿Me podrías decir cómo puedo cargar mi currículum en su sitio web?
+    - ¿Cuál es el proceso para cargar mi CV en su plataforma?
+    - Quiero aplicar a una oferta laboral, ¿dónde debo cargar mi CV?
+    - ¿Hay algún enlace específico donde pueda cargar mi CV para aplicar a una vacante?
+    - Como hago para cargarr mi ccurriculum vitae?
+    - Dond subo mi curiculun vittae?
+    - Como puedo meter mi cv en la paginna web?
+    - Donde es la seccion para poner mi cv en la pagna?
+    - Cuale es la forma de subir mi cv a la web?
+    - Como se cargga el cv enn esta pagina?
+    - Donde cargo mi cv para aplicar a los trabajos?
+    - komo ago para ponerr mi cv en estaa pagina?
+    - doondee subo mi cv para el trrabajo?
+    - qiero mandar mi cv. donde es?
+    - komo puedo mandar curriculoom vitae por acá?
+    - hola qiero mandar mi hoja de vida como hago?
+    - cm se mandan los cv?
+    - cual es el linck para yenaar el curiculum?
+    - Quiero cargar mi CV
+    - Carga cv
+    - Quiero cargar mi curriculum
+    - Puedo cargar mi curriculum vitae?
+    - Curriculum Vitae
+    - como puedo cargar mi CV?
+- intent: despedida
+  examples: |
+    - Adiós, muchas gracias!
+    - Gracias!
+    - Hasta luego.
+    - Nos vemos.
+    - Adiós.
+    - Hasta la próxima.
+    - Que tengas un buen día.
+    - Cuídate.
+    - Saludos.
+    - Bye bye.
+    - Chau
+    - Hasta luego!!
+    - Muchísimas gracias
+    - Muchisisimas gracias
+    - Hasta la próxima vez
+    - cau hasta lugo
+    - muchas gracias, adiós
+    - Chao me voe
+    - Hasta la vista
+    - Adioska
+    - Nosvemo
+    - Adio
+    - Bye byyeeeeee
+    - Adiosin
+    - Adiosh
+    - Hasta prontoche
+    - Suerteh
+    - Hasta luegui
+- intent: out_of_scope
+  examples: |
+    - No sé
+    - ni idea
+    - no lo se
+    - quiero trabajo
+    - te odio
+    - no servis
+    - dame trabajo
+    - contame un chiste
+    - chiste
+    - broma
+    - decime una broma
+- intent: afirmativo
+  examples: |
+    - Si
+    - Si, por favor
+    - Sí, eso es correcto.
+    - Por supuesto que sí.
+    - Totalmente
+    - Sin duda alguna.
+    - Efectivamente
+    - Exactamente
+    - Claro que sí.
+    - Absolutamente
+    - Positivo
+    - Porfavor
+    - Si, quiero
+    - bueno
+    - está bien
+    - Si, quiero anotarme
+    - Anotame
+    - Quiero entrar
+    - Quiero anotarme
+    - si, quiero anotarme
+    - si, me voy a anotar
+    - si ssguro q sii
+    - claroo obio q si
+    - asii ess tal cual
+    - por supueso q sip
+    - sinn lugarr a dudass
+    - siemrpee
+- intent: negativo
+  examples: |
+    - No
+    - No, no estoy de acuerdo con eso.
+    - De ninguna manera.
+    - Creo que no
+    - No, no es posible.
+    - No, no me interesa.
+    - No, no quiero hacer eso.
+    - Por ahora no
+    - No, gracias
+    - Ni ahí
+    - Ni ganas
+    - Yooo noo creo, jajaja
+    - Esaaa infooo no es verdadd
+    - Noo, no estoy de acuerdoo
+    - Naaah, eso no puedee serrr
+    - Nop, no es ciertoo
+    - Nope
+    - Nada
+    - None
+- intent: saludo
+  examples: |
+    - me llamo [Camila](nombre)
+    - hola, mi nombre es [Andrea](nombre)
+    - hi, me llamo [Daniel](nombre)
+    - buen dia soy [Hugo](nombre)
+    - buenos dias [Beatriz]](nombre)
+    - yo soy [Agata]](nombre)
+    - buenas tardes [Fernando](nombre)
+    - buenas, mi nombre es [Melany]](nombre)
+    - [Bianca](nombre)
+    - holas, soy [Sabrina](nombre)
+    - buendia [José](nombre)
+    - buenastardes [Sergio](nombre)
+    - me llama [Delia](nombre)
+    - [Franco](nombre)
+    - me llamo [Marcos](nombre)
+    - buenas, me llamo [Florencia](nombre)
+    - mi nombre es [Rocío](nombre)
+    - mi nombre es [Karen](nombre)
+    - buenas, mi nombre es [Lorenzo](nombre)
+    - mi nombre es [Alejandro](nombre)
+    - Mi nombre es [Amadeus](nombre)
+    - Me llam [Francisco](nombre)
+    - Ola, soi [Mariah](nombre)
+    - Hola, me llamo [Pdro](nombre)
+    - Holaa mi nmbre s [Juan](nombre)
+    - Hl, m llamo [Alxndr](nombre)
+    - [Agustina]
+    - [Agustín]
+    - [Alan]
+    - [Alberto]
+    - [Alejandro]
+    - [Alexis]
+    - [Alfredo]
+    - [Alicia] 
+    - [Ana]
+    - [Andrea]
+    - [Aníbal]
+    - [Antonio]
+    - [Ariel]
+    - [Belén]
+    - [Bernardo]
+    - [Braian]
+    - [Brenda]
+    - [Bruno]
+    - [Carina]
+    - [Carlos]
+    - [Carolina]
+    - [Catalina]
+    - [Cecilia]
+    - [Celeste]
+    - [Christian]
+    - [Cintia]
+    - [Claudia]
+    - [Cristian]
+    - [Cristina]
+    - [Damián]
+    - [Daniel]
+    - [David]
+    - [Diego]
+    - [Eduardo]
+    - [Elena]
+    - [Elías]
+    - [Elizabeth]
+    - [Emiliano]
+    - [Emilio]
+    - [Enrique]
+    - [Ernesto]
+    - [Esteban]
+    - [Ezequiel]
+    - [Fabián]
+    - [Federico]
+    - [Felipe]
+    - [Fernanda]
+    - [Gabriel]
+    - [Germán]
+    - [Gimena]
+    - [Gisela]
+    - [Gonzalo]
+    - [Guadalupe]
+    - [Guido]
+    - [Gustavo]
+    - [Hernán]
+    - [Ignacio]
+    - [Isabel]
+    - [Isabella]
+    - [Ivana]
+    - [Javier]
+    - [Jesica]
+    - [Joaquín]
+    - [Jonathan]
+    - [Jorge]
+    - [José]
+    - [Josefina]
+    - [Juan]
+    - [Juana]
+    - [Julia]
+    - [Juliana]
+    - [Julio]
+    - [Karen]
+    - [Karina]
+    - [Laura]
+    - [Leandro]
+    - [Leonardo]
+    - [Leticia]
+    - [Liliana]
+    - [Lorena]
+    - [Lucas]
+    - [Luciana]
+    - [Luciano]
+    - [Luis]
+    - [Luisa]
+    - [Macarena]
+    - [Magdalena]
+    - [Manuel]
+    - [Mariana]
+    - [Mariano]
+    - [Mario]
+    - [Martina]
+    - [Mauricio]
+    - [Maximiliano]
+    - [Mercedes]
+    - [Micaela]
+    - [Miguel]
+    - [Milagros]
+    - [Miriam]
+    - [Mónica]
+    - [Nahuel]
+    - [Natalia]
+    - [Néstor]
+    - [Nicolas]
+    - [Nicolás]
+    - [Noelia]
+    - [Norma]
+    - [Olivia]
+    - [Omar]
+    - [Paola]
+    - [Patricia]
+    - [Paula]
+    - [Pedro]
+    - [Pilar]
+    - [Ramiro]
+    - [Ramón]
+    - [Raúl]
+    - [Renata]
+    - [Ricardo]
+    - [Roberto]
+    - [Rodrigo]
+    - [Romina]
+    - [Rubén]
+    - [Sandra]
+    - [Santiago]
+    - [Sara]
+    - [Sebastián]
+    - [Silvina]
+    - [Soledad]
+    - [Sonia]
+    - [Stefania]
+    - [Sofía]
+    - [Susana]
+    - [Tamara]
+    - [Tania]
+    - [Tatiana]
+    - [Tomas]
+    - [Tomás]
+    - [Valentina]
+    - [Valeria]
+    - [Vanessa]
+    - [Verónica]
+    - [Victoria]
+    - [Viviana]
+    - [Walter]
+    - [Yanina]
+    - [Yolanda]
+    - [Yésica]
+    - [Zoe]

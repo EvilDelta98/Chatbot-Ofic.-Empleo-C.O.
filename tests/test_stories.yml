@@ -1,0 +1,91 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: camino feliz 1
+  steps:
+  - user: |
+      Hola que tal!
+    intent: saludo
+  - action: utter_saludo
+  - user: |
+      increible
+    intent: animo_bien
+  - action: utter_feliz
+
+- story: camino feliz 2
+  steps:
+  - user: |
+      Hola que tal!
+    intent: saludo
+  - action: utter_saludo
+  - user: |
+      increible
+    intent: animo_bien
+  - action: utter_feliz
+  - user: |
+      nos vemos!
+    intent: adios
+  - action: utter_adios
+
+- story: camino triste 1
+  steps:
+  - user: |
+      hola
+    intent: saludo
+  - action: utter_saludo
+  - user: |
+      no bien
+    intent: animo_mal
+  - action: utter_animo
+  - action: utter_funciono
+  - user: |
+      si
+    intent: afirmar
+  - action: utter_feliz
+
+- story: camino triste 2
+  steps:
+  - user: |
+      hola
+    intent: saludo
+  - action: utter_saludo
+  - user: |
+      no bien
+    intent: animo_mal
+  - action: utter_animo
+  - action: utter_funciono
+  - user: |
+      en realidad no
+    intent: negar
+  - action: utter_adios
+
+- story: camino triste 3
+  steps:
+  - user: |
+      hola
+    intent: saludo
+  - action: utter_saludo
+  - user: |
+      muy terrible
+    intent: animo_mal
+  - action: utter_animo
+  - action: utter_funciono
+  - user: |
+      no
+    intent: negar
+  - action: utter_adios
+
+- story: decir adios
+  steps:
+  - user: |
+      adios!
+    intent: adios
+  - action: utter_adios
+
+- story: bot desafio
+  steps:
+  - user: |
+      eres un bot?
+    intent: bot_desafio
+  - action: utter_soyunbot
